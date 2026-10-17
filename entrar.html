@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Entrar</title>
+<meta name="theme-color" content="#0b4f41">
+<link rel="icon" href="./icon.svg" type="image/svg+xml">
+<link rel="manifest" href="./manifest.webmanifest">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=IBM+Plex+Mono:wght@500&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="./assets/site.css">
+</head>
+<body>
+<main class="wrap auth">
+  <div class="card">
+    <a class="logo" href="./"><span class="mark" data-brand-ini></span><b data-brand></b></a>
+
+    <div class="seg" role="tablist" id="seg">
+      <button type="button" role="tab" data-view="entrar">Entrar</button>
+      <button type="button" role="tab" data-view="criar">Criar conta</button>
+    </div>
+
+    <div id="msg" class="msg" role="alert" hidden></div>
+
+    <!-- entrar -->
+    <form class="f" id="v-entrar" data-v="entrar" hidden>
+      <div><h1>Bem-vindo de volta</h1><p class="sub">Entre para ver seu painel.</p></div>
+      <div class="field"><label for="le">E-mail</label><input id="le" type="email" autocomplete="email" required></div>
+      <div class="field"><label for="ls">Senha</label><input id="ls" type="password" autocomplete="current-password" required></div>
+      <button class="btn primary big" type="submit">Entrar</button>
+      <button class="linkbtn" type="button" data-go="esqueci">Esqueci minha senha</button>
+    </form>
+
+    <!-- criar -->
+    <form class="f" id="v-criar" data-v="criar" hidden>
+      <div><h1>Comece grátis</h1><p class="sub"><span data-dias></span> dias para testar tudo, sem cartão.</p></div>
+      <div class="field"><label for="cn">Seu nome</label><input id="cn" autocomplete="name" required maxlength="80"></div>
+      <div class="field"><label for="ce">E-mail</label><input id="ce" type="email" autocomplete="email" required></div>
+      <div class="field"><label for="cs">Senha</label><input id="cs" type="password" autocomplete="new-password" minlength="8" required><span class="hint">Mínimo de 8 caracteres.</span></div>
+      <label class="chkline"><input type="checkbox" id="ct" required><span>Li e aceito os <a href="./termos" target="_blank">Termos de uso</a> e a <a href="./privacidade" target="_blank">Política de privacidade</a>.</span></label>
+      <button class="btn primary big" type="submit">Criar minha conta</button>
+    </form>
+
+    <!-- esqueci -->
+    <form class="f" id="v-esqueci" data-v="esqueci" hidden>
+      <div><h1>Recuperar senha</h1><p class="sub">Enviaremos um link para você criar uma nova senha.</p></div>
+      <div class="field"><label for="re">E-mail</label><input id="re" type="email" autocomplete="email" required></div>
+      <button class="btn primary big" type="submit">Enviar link</button>
+      <button class="linkbtn" type="button" data-go="entrar">Voltar para entrar</button>
+    </form>
+
+    <!-- nova senha (chega pelo link do e-mail) -->
+    <form class="f" id="v-nova-senha" data-v="nova-senha" hidden>
+      <div><h1>Nova senha</h1><p class="sub">Escolha uma senha nova para sua conta.</p></div>
+      <div class="field"><label for="ns">Nova senha</label><input id="ns" type="password" autocomplete="new-password" minlength="8" required><span class="hint">Mínimo de 8 caracteres.</span></div>
+      <button class="btn primary big" type="submit">Salvar nova senha</button>
+    </form>
+
+    <p class="small" id="demoNote" hidden>O sistema ainda não foi conectado ao banco de dados. <a href="./app?demo=1">Abrir a demonstração</a>.</p>
+  </div>
+</main>
+
+<script src="./config.js"></script>
+<script src="./assets/marca.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.117.2/dist/umd/supabase.js"></script>
+<script>
+(function () {
+  var C = window.APP_CONFIG || {};
+  var configurado = C.supabaseUrl && !/COLE_AQUI/.test(C.supabaseUrl) && window.supabase;
+  var sb = configurado ? window.supabase.createClient(C.supabaseUrl, C.supabaseAnonKey) : null;
+  var msg = document.getElementById('msg');
+  var recovery = false;
+
+  function show(view) {
+    document.querySelectorAll('form.f').forEach(function (f) { f.hidden = f.dataset.v !== view; });
+    document.querySelectorAll('#seg button').forEach(function (b) { b.setAttribute('aria-selected', String(b.dataset.view === view)); });
+    document.getElementById('seg').hidden = view === 'esqueci' || view === 'nova-senha';
+    msg.hidden = true;
+    var first = document.querySelector('#v-' + view + ' input'); if (first && window.matchMedia('(min-width: 641px)').matches) first.focus();
+  }
+  function say(text, ok) { msg.textContent = text; msg.className = 'msg ' + (ok ? 'ok' : 'err'); msg.hidden = false; }
+  function traduz(e) {
+    var m = String((e && e.message) || '');
+    if (/invalid login credentials/i.test(m)) return 'E-mail ou senha incorretos.';
+    if (/already registered|already been registered/i.test(m)) return 'Já existe uma conta com este e-mail. Entre ou recupere a senha.';
+    if (/email not confirmed/i.test(m)) return 'Confirme seu e-mail antes de entrar. Procure a mensagem na caixa de entrada ou no spam.';
+    if (/password/i.test(m) && /(short|weak|least)/i.test(m)) return 'A senha precisa ter pelo menos 8 caracteres.';
+    if (/rate limit|too many/i.test(m)) return 'Muitas tentativas seguidas. Aguarde alguns minutos.';
+    return 'Não foi possível concluir. Verifique a conexão e tente de novo.';
+  }
+  function busy(form, on) { var b = form.querySelector('button[type=submit]'); b.disabled = on; b.style.opacity = on ? .6 : 1; }
+
+  var initial = (location.hash || '#entrar').slice(1);
+  if (!['entrar','criar','esqueci','nova-senha'].includes(initial)) initial = 'entrar';
+  show(initial);
+
+  document.addEventListener('click', function (e) {
+    var t = e.target.closest('[data-view],[data-go]'); if (!t) return;
+    var v = t.dataset.view || t.dataset.go; history.replaceState(null, '', '#' + v); show(v);
+  });
+
+  if (!sb) {
+    document.getElementById('demoNote').hidden = false;
+    document.querySelectorAll('form.f button[type=submit]').forEach(function (b) { b.disabled = true; b.style.opacity = .5; });
+    return;
+  }
+
+  sb.auth.onAuthStateChange(function (ev) {
+    if (ev === 'PASSWORD_RECOVERY') { recovery = true; show('nova-senha'); }
+  });
+  sb.auth.getSession().then(function (r) {
+    if (r.data.session && initial !== 'nova-senha' && !recovery) location.replace('app');
+  });
+
+  document.getElementById('v-entrar').addEventListener('submit', async function (e) {
+    e.preventDefault(); busy(this, true);
+    var r = await sb.auth.signInWithPassword({ email: le.value.trim(), password: ls.value });
+    busy(this, false);
+    if (r.error) say(traduz(r.error)); else location.replace('app');
+  });
+
+  document.getElementById('v-criar').addEventListener('submit', async function (e) {
+    e.preventDefault();
+    if (!ct.checked) { say('Para criar a conta, aceite os Termos de uso e a Política de privacidade.'); return; }
+    busy(this, true);
+    var r = await sb.auth.signUp({
+      email: ce.value.trim(), password: cs.value,
+      options: { data: { nome: cn.value.trim() }, emailRedirectTo: new URL('app', location.href).href }
+    });
+    busy(this, false);
+    if (r.error) { say(traduz(r.error)); return; }
+    if (r.data.session) { location.replace('app'); return; }
+    say('Conta criada! Enviamos um link de confirmação para ' + ce.value.trim() + '. Abra o e-mail para entrar.', true);
+    this.reset();
+  });
+
+  document.getElementById('v-esqueci').addEventListener('submit', async function (e) {
+    e.preventDefault(); busy(this, true);
+    var r = await sb.auth.resetPasswordForEmail(re.value.trim(), { redirectTo: new URL('entrar#nova-senha', location.href).href });
+    busy(this, false);
+    if (r.error) say(traduz(r.error)); else say('Se existir uma conta com esse e-mail, o link chega em instantes. Confira também o spam.', true);
+  });
+
+  document.getElementById('v-nova-senha').addEventListener('submit', async function (e) {
+    e.preventDefault(); busy(this, true);
+    var r = await sb.auth.updateUser({ password: ns.value });
+    busy(this, false);
+    if (r.error) say(traduz(r.error)); else { say('Senha alterada. Abrindo seu painel…', true); setTimeout(function () { location.replace('app'); }, 1200); }
+  });
+})();
+</script>
+</body>
+</html>

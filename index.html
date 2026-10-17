@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Sempre em Dia · Finanças, saúde e rotina da família</title>
+<meta name="description" content="Organize as finanças da família, a saúde e a rotina num só painel, no computador e no celular. Teste grátis por 7 dias.">
+<meta name="theme-color" content="#0b4f41">
+<meta property="og:type" content="website">
+<meta property="og:image" content="./assets/tela-computador.png">
+<link rel="icon" href="./icon.svg" type="image/svg+xml">
+<link rel="manifest" href="./manifest.webmanifest">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=IBM+Plex+Mono:wght@500&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="./assets/site.css">
+</head>
+<body>
+<header class="wrap nav">
+  <a class="logo" href="./"><span class="mark" data-brand-ini></span><b data-brand></b></a>
+  <a class="link hide-m" href="#recursos">Recursos</a>
+  <a class="link hide-m" href="#preco">Preço</a>
+  <a class="link" href="./entrar">Entrar</a>
+</header>
+
+<main>
+  <div class="wrap" id="excluida" hidden><p class="msg ok" style="padding:12px 14px;border-radius:10px;background:var(--accent-soft);color:var(--accent)">Sua conta e todos os seus dados foram excluídos.</p></div>
+
+  <section class="wrap hero">
+    <div>
+      <span class="eyebrow">Gestão pessoal e familiar</span>
+      <h1>Contas, saúde e rotina da família <em>sempre em dia</em>.</h1>
+      <p class="lead">Organize despesas, cartões e financiamentos, lembre dos remédios e treinos e acompanhe as pendências do dia, no computador e no celular.</p>
+      <div class="cta">
+        <a class="btn primary big" href="./entrar#criar">Começar <span data-dias></span> dias grátis</a>
+        <a class="btn big" href="./app?demo=1">Ver demonstração</a>
+        <small>Sem cartão para testar. Cancele quando quiser.</small>
+      </div>
+    </div>
+    <div class="shot">
+      <img class="desk" src="./assets/tela-computador.png" alt="Painel no computador: saldo previsto do mês, contas pedindo atenção e indicadores" width="1280" height="860">
+      <img class="phone" src="./assets/tela-celular.png" alt="Painel no celular com a linha de cuidados do dia" width="390" height="844">
+    </div>
+  </section>
+
+  <section class="band alt" id="recursos">
+    <div class="wrap">
+      <h2>Três áreas da vida, um painel só</h2>
+      <p class="intro">Tudo o que um pai ou uma mãe de família precisa acompanhar no mês, organizado do jeito que você pensa.</p>
+      <div class="mods">
+        <article class="mod">
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 13h4v7H4zM10 8h4v12h-4zM16 4h4v16h-4z"/></svg></div>
+          <h3>Finanças</h3>
+          <ul>
+            <li>Mais de 40 despesas de família já organizadas por categoria</li>
+            <li>Cartões com a fatura somada automaticamente</li>
+            <li>Financiamentos com parcelas pagas e saldo devedor</li>
+            <li>Investimentos, receitas e saldo previsto do mês</li>
+            <li>Alerta de contas atrasadas e a vencer</li>
+          </ul>
+        </article>
+        <article class="mod">
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="8"/><path d="M12 8v4l3 2"/></svg></div>
+          <h3>Saúde</h3>
+          <ul>
+            <li>Remédios e suplementos com os horários do dia</li>
+            <li>Plano de refeições como lembrete</li>
+            <li>Treinos da semana, dia a dia</li>
+            <li>Controle de copos de água</li>
+            <li>Aviso do que ficou para trás</li>
+          </ul>
+        </article>
+        <article class="mod">
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6l2 2 3-3M11 7h9M4 13l2 2 3-3M11 14h9M11 20h9"/></svg></div>
+          <h3>Rotina</h3>
+          <ul>
+            <li>Pendências com prazo, área e prioridade</li>
+            <li>Anotação rápida: escreva e tecle Enter</li>
+            <li>Atrasadas e “para hoje” sempre no topo</li>
+            <li>Rotina diária com os dias da semana</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="band">
+    <div class="wrap split">
+      <img class="phone2" src="./assets/tela-celular-financas.png" alt="Resumo financeiro do mês no celular" width="390" height="844" loading="lazy">
+      <div>
+        <h2>Feito para usar no celular</h2>
+        <p class="intro">Abra no navegador e adicione à tela inicial: ele vira um aplicativo, com ícone próprio.</p>
+        <ul class="checks">
+          <li><div><b>Sincroniza em todos os aparelhos</b><span>O que você marca no celular aparece no computador na hora.</span></div></li>
+          <li><div><b>Um toque para marcar como pago</b><span>Contas, remédios e tarefas se resolvem com um toque.</span></div></li>
+          <li><div><b>Seus dados são só seus</b><span>Cada conta é isolada no banco de dados e a conexão é criptografada.</span></div></li>
+          <li><div><b>Sem instalação nem atualização</b><span>Funciona em Android, iPhone e computador.</span></div></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="band alt" id="preco">
+    <div class="wrap">
+      <h2>Um plano, tudo incluído</h2>
+      <p class="intro">Experimente sem compromisso. Se gostar, assine pelo Mercado Pago.</p>
+      <div class="price">
+        <div>
+          <h3>Plano completo</h3>
+          <p>Finanças, saúde e rotina, em todos os seus aparelhos.</p>
+          <ul>
+            <li><span data-dias></span> dias grátis, sem cartão</li>
+            <li>Cobrança mensal automática no cartão</li>
+            <li>Cancele quando quiser, direto no app</li>
+          </ul>
+        </div>
+        <div class="side">
+          <div class="val"><span data-preco></span><small> /mês</small></div>
+          <a class="btn primary big" href="./entrar#criar">Criar conta grátis</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band">
+    <div class="wrap">
+      <h2>Perguntas frequentes</h2>
+      <div class="faq">
+        <details><summary>Preciso cadastrar cartão para testar?</summary><p>Não. Você cria a conta com e-mail e senha e usa tudo por <span data-dias></span> dias. O cartão só é pedido se você decidir assinar.</p></details>
+        <details><summary>Como funciona o pagamento?</summary><p>A assinatura é feita pelo Mercado Pago, com cobrança mensal automática no cartão. Se você assinar durante o teste, a primeira cobrança acontece só quando o teste acabar.</p></details>
+        <details><summary>Posso cancelar quando quiser?</summary><p>Sim, na área Minha conta, com um toque. Você continua usando até o fim do período já pago e não há multa.</p></details>
+        <details><summary>O que acontece se eu não assinar depois do teste?</summary><p>Seus dados ficam guardados e você continua vendo tudo, mas não consegue editar. Assinando, volta a usar normalmente.</p></details>
+        <details><summary>Meus dados estão seguros?</summary><p>Cada cliente só acessa os próprios dados, por regra do banco de dados. A conexão é criptografada e você pode excluir sua conta e todos os dados quando quiser.</p></details>
+        <details><summary>Funciona no iPhone e no Android?</summary><p>Sim. Abra o site no navegador do celular e use “Adicionar à tela inicial” para ter o ícone como um aplicativo.</p></details>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© <span id="ano"></span> <span data-brand></span> · <span data-empresa></span></span>
+    <span><a href="./termos">Termos de uso</a> · <a href="./privacidade">Privacidade</a> · <span data-suporte></span></span>
+  </div>
+</footer>
+
+<script src="./config.js"></script>
+<script src="./assets/marca.js"></script>
+<script>
+  if (new URLSearchParams(location.search).get('conta') === 'excluida') document.getElementById('excluida').hidden = false;
+</script>
+</body>
+</html>

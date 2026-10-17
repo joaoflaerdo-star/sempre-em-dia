@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Sempre em Dia</title>
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#0b4f41">
+<link rel="manifest" href="./manifest.webmanifest">
+<link rel="icon" href="./icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="./icon-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=IBM+Plex+Mono:wght@500&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="./assets/app.css">
+<style>html,body{margin:0}[hidden]{display:none!important}:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}</style>
+</head>
+<body>
+<div class="shell">
+<aside class="side" id="side" aria-label="Navegação"></aside>
+<div class="maincol">
+<header>
+  <div class="wrap hbar">
+    <div class="brand brand-m"><div class="mark" aria-hidden="true" data-brand-ini></div><div><b data-brand></b><span data-slogan></span></div></div>
+    <div class="crumb" id="crumb"></div>
+    <nav class="modules" aria-label="Módulos" id="modules"></nav>
+    <div class="month">
+      <button class="icon-btn" type="button" data-act="prev" id="prevBtn" aria-label="Anterior">‹</button>
+      <button class="datebtn" type="button" id="monthLabel" data-act="today" title="Voltar para hoje"></button>
+      <button class="icon-btn" type="button" data-act="next" id="nextBtn" aria-label="Próximo">›</button>
+    </div>
+  </div>
+  <div class="wrap tabs" role="tablist" id="tabs"></div>
+</header>
+<main class="wrap" id="app"><div class="loading">Carregando seu painel…</div></main>
+</div>
+</div>
+<div id="modalRoot"></div>
+<div id="toastRoot"></div>
+
+<script src="./config.js"></script>
+<script>
+  (function(){
+    var c = window.APP_CONFIG || {}, n = c.nome || 'Sempre em Dia';
+    var ini = n.trim().split(/\s+/).slice(0,2).map(function(w){ return w[0]; }).join('').toUpperCase();
+    document.title = n;
+    document.querySelectorAll('[data-brand]').forEach(function(e){ e.textContent = n; });
+    document.querySelectorAll('[data-brand-ini]').forEach(function(e){ e.innerHTML = '<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="5" width="17" height="15.5" rx="3"/><path d="M8 3v4M16 3v4M3.5 10h17"/><path d="M8.5 15l2.5 2.5 4.5-5"/></svg>'; });
+    document.querySelectorAll('[data-slogan]').forEach(function(e){ e.textContent = c.slogan || ''; });
+  })();
+</script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.117.2/dist/umd/supabase.js"></script>
+<script src="./assets/app.js"></script>
+</body>
+</html>
