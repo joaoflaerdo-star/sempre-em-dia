@@ -1,0 +1,22 @@
+/* Camada comercial v1: isolada do aplicativo e da autenticação */
+body:has(.hero){--accent:#2563eb;--accent-soft:#eaf1ff;--ink:#14213d;--muted:#596b83;--line:#dce5f1;--bg:#f7faff}
+body:has(.hero) .nav{position:sticky;top:0;z-index:30;background:rgba(255,255,255,.94);backdrop-filter:blur(16px);border-bottom:1px solid #e4eaf3}
+body:has(.hero) .hero{padding-block:88px 94px}
+body:has(.hero) .hero h1{letter-spacing:-.055em}
+body:has(.hero) .hero .lead{max-width:640px}
+body:has(.hero) .btn.primary{background:#2563eb;color:white;border-color:#2563eb;box-shadow:0 10px 25px rgba(37,99,235,.2)}
+body:has(.hero) .btn.primary:hover{background:#174cc5}
+body:has(.hero) .mod{border:1px solid #e1e9f5;border-radius:22px;box-shadow:0 10px 30px rgba(18,44,88,.045)}
+body:has(.hero) .shot img{filter:drop-shadow(0 20px 30px rgba(25,53,98,.12))}
+.sed-trust{display:flex;flex-wrap:wrap;gap:12px 22px;margin-top:20px;color:#51647e;font-size:13px}
+.sed-trust span:before{content:"✓";font-weight:800;color:#0d9488;margin-right:7px}
+.sed-steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin-top:30px}
+.sed-step{background:white;border:1px solid #e2eaf4;border-radius:18px;padding:24px}
+.sed-step strong{display:inline-grid;place-items:center;width:34px;height:34px;border-radius:10px;background:#eaf1ff;color:#2563eb;margin-bottom:12px}
+.sed-step h3{margin:0 0 8px;font-size:19px}
+.sed-step p{color:#596b83;font-size:15px}
+.sed-final{text-align:center;background:linear-gradient(130deg,#10213e,#194b8d);color:#fff;padding:64px 22px;border-radius:26px;margin-block:44px}
+.sed-final p{color:#d7e5fb;margin:12px auto 24px;max-width:540px}
+.sed-final .btn{background:#fff;color:#153c78;border-color:#fff}
+.sed-mobile-cta{display:none}
+@media(max-width:700px){.sed-steps{grid-template-columns:1fr}.sed-mobile-cta{display:block;position:fixed;bottom:0;left:0;right:0;z-index:50;background:rgba(255,255,255,.97);padding:10px 16px calc(10px + env(safe-area-inset-bottom));box-shadow:0 -4px 22px #10213e20}.sed-mobile-cta a{display:block;text-align:center;padding:13px;border-radius:12px;background:#2563eb;color:white;font-weight:700;text-decoration:none}body:has(.hero) footer{padding-bottom:95px}body:has(.hero) .hero{padding-block:46px 55px}}
