@@ -1,0 +1,20 @@
+name: Verificação comercial
+on:
+  pull_request:
+    paths:
+      - 'index.html'
+      - 'entrar.html'
+      - 'config.js'
+      - 'assets/comercial-v1.*'
+      - 'tests/comercial-smoke.mjs'
+      - '.github/workflows/comercial-smoke.yml'
+  workflow_dispatch:
+jobs:
+  smoke:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: node tests/comercial-smoke.mjs
