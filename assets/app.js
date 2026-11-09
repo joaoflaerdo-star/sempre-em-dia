@@ -369,7 +369,7 @@ function planoInfo(){
   return ['—', 'mute', ''];
 }
 function topBanner(){
-  if (DEMO) return `<div class="banner demo" role="status"><span>Demonstração com dados de exemplo. Nada aqui é salvo na nuvem.</span><a href="entrar#criar">Criar minha conta grátis</a></div>`;
+  if (DEMO) return `<div class="banner demo" role="status"><span>Demonstração com dados de exemplo. Nada aqui é salvo na nuvem.</span><a href="entrar.html#criar" target="_top">Criar minha conta grátis</a></div>`;
   if (mode !== 'cloud' || mod === 'conta') return '';
   if (!canWrite) return `<div class="banner crit" role="status"><span>${planoInfo()[2]}</span><button type="button" data-act="assinar">Assinar por ${precoTxt()}/mês</button></div>`;
   if (assin && assin.status === 'teste'){
@@ -417,7 +417,7 @@ function vConta(){
   <section class="panel"><h3>Plano</h3>
     <div class="planrow"><div class="plantxt"><span class="pill ${cl}">${st}</span><p class="note">${desc}</p></div>
       <div class="planprice"><b class="num">${precoTxt()}</b><span class="note">por mês</span></div></div>
-    <div class="actions">${DEMO ? `<a class="btn primary" href="entrar#criar">Criar conta grátis</a>` : ativa ? `<button class="btn danger" type="button" data-act="cancelar">Cancelar assinatura</button>` : `<button class="btn primary" type="button" data-act="assinar">Assinar agora</button>`}</div>
+    <div class="actions">${DEMO ? `<a class="btn primary" href="entrar.html#criar" target="_top">Criar conta grátis</a>` : ativa ? `<button class="btn danger" type="button" data-act="cancelar">Cancelar assinatura</button>` : `<button class="btn primary" type="button" data-act="assinar">Assinar agora</button>`}</div>
     ${DEMO ? '' : '<p class="note">Pagamento processado pelo Mercado Pago. Cancele quando quiser; o acesso continua até o fim do período pago.</p>'}
   </section>
   ${DEMO ? '' : `<section class="panel"><h3>Seus dados</h3>

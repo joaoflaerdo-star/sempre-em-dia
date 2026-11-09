@@ -1,5 +1,5 @@
 // Permite instalar como aplicativo e abrir mais rápido. Os dados sempre vêm da internet.
-const CACHE = 'painel-v1';
+const CACHE = 'sempre-em-dia-visual-v2';
 const ARQUIVOS = ['app', 'assets/app.css', 'assets/app.js', 'config.js', 'icon.svg', 'icon-192.png'];
 self.addEventListener('install', (e) => { e.waitUntil(caches.open(CACHE).then((c) => c.addAll(ARQUIVOS)).then(() => self.skipWaiting())); });
 self.addEventListener('activate', (e) => {

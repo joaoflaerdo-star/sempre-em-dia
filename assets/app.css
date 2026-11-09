@@ -1,27 +1,27 @@
 
 /* Layout: caderno de gestão pessoal — barra fixa com módulo (Finanças, Saúde, Rotina) e data; resumo antes do detalhe; abas por assunto */
 :root{
-  --bg:#f3f5f2; --surface:#ffffff; --sunk:#e9ede8; --ink:#15201b; --muted:#5a6962; --line:#d8ded8;
-  --accent:#0d6855; --accent-ink:#ffffff; --accent-soft:#dbeee7;
-  --good:#2b7646; --good-soft:#e0f0e4; --warn:#9c6210; --warn-soft:#f6ead2; --crit:#b03a28; --crit-soft:#f6dfda;
+  --bg:#F4F7FB; --surface:#ffffff; --sunk:#edf2f9; --ink:#101C32; --muted:#58677d; --line:#dde5ef;
+  --accent:#1c66d5; --accent-ink:#ffffff; --accent-soft:#eaf2ff;
+  --good:#076f63; --good-soft:#e4f7f3; --warn:#95600b; --warn-soft:#fff4de; --crit:#b43638; --crit-soft:#fff0f0;
   --f-display:"Bricolage Grotesque", ui-sans-serif, system-ui, sans-serif;
   --f-body:"IBM Plex Sans", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
   --f-mono:"IBM Plex Mono", ui-monospace, "SF Mono", Menlo, Consolas, monospace;
-  --r:14px;
-  --hero:#0b4f41; --hero-ink:#ecf7f2; --hero-muted:#a7cec0; --hero-track:#2a6a5b; --hero-neg:#ffc2b6;
-  --shadow:0 1px 2px rgb(16 32 26 / .05), 0 6px 20px rgb(16 32 26 / .04);
+  --r:18px;
+  --hero:#101C32; --hero-ink:#ffffff; --hero-muted:#bfcee4; --hero-track:#334660; --hero-neg:#ffc2b6;
+  --shadow:0 1px 2px rgb(16 28 50 / .04), 0 8px 25px rgb(16 28 50 / .04);
 }
 @media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
-  --bg:#0f1412; --surface:#161d1a; --sunk:#1d2622; --ink:#e4ebe7; --muted:#93a29b; --line:#28332e;
-  --accent:#4cbf9f; --accent-ink:#06261e; --accent-soft:#173a31;
-  --good:#6bc68a; --good-soft:#18301f; --warn:#e0a94f; --warn-soft:#352813; --crit:#ee8270; --crit-soft:#3a1d18;
-  --hero:#133b32; --hero-ink:#e6f4ee; --hero-muted:#8fbfaf; --hero-track:#24564a; --hero-neg:#ff9f8e; --shadow:none;
+  --bg:#0b1322; --surface:#111e33; --sunk:#1a2940; --ink:#e7eefb; --muted:#a5b5ce; --line:#2a3b55;
+  --accent:#84b6ff; --accent-ink:#101C32; --accent-soft:#1a3459;
+  --good:#62d6c6; --good-soft:#123c38; --warn:#f8bc51; --warn-soft:#3a2d18; --crit:#ff9d9f; --crit-soft:#40202b;
+  --hero:#152a48; --hero-ink:#f0f6ff; --hero-muted:#b9cde8; --hero-track:#355477; --hero-neg:#ff9f8e; --shadow:none;
   color-scheme:dark }}
 :root[data-theme="dark"]{
-  --bg:#0f1412; --surface:#161d1a; --sunk:#1d2622; --ink:#e4ebe7; --muted:#93a29b; --line:#28332e;
-  --accent:#4cbf9f; --accent-ink:#06261e; --accent-soft:#173a31;
-  --good:#6bc68a; --good-soft:#18301f; --warn:#e0a94f; --warn-soft:#352813; --crit:#ee8270; --crit-soft:#3a1d18;
-  --hero:#133b32; --hero-ink:#e6f4ee; --hero-muted:#8fbfaf; --hero-track:#24564a; --hero-neg:#ff9f8e; --shadow:none;
+  --bg:#0b1322; --surface:#111e33; --sunk:#1a2940; --ink:#e7eefb; --muted:#a5b5ce; --line:#2a3b55;
+  --accent:#84b6ff; --accent-ink:#101C32; --accent-soft:#1a3459;
+  --good:#62d6c6; --good-soft:#123c38; --warn:#f8bc51; --warn-soft:#3a2d18; --crit:#ff9d9f; --crit-soft:#40202b;
+  --hero:#152a48; --hero-ink:#f0f6ff; --hero-muted:#b9cde8; --hero-track:#355477; --hero-neg:#ff9f8e; --shadow:none;
   color-scheme:dark }
 
 *{box-sizing:border-box}
@@ -384,3 +384,21 @@ a.btn.primary{color:var(--accent-ink)}
   .cal-d{min-height:40px}
   .cal-d small{font-size:9.5px}
 }
+
+/* Nova identidade: ações azuis, progresso verde e alertas âmbar. */
+:root{--brand-blue:#247CF5;--brand-teal:#13B8A6;--brand-amber:#F59E0B}
+.mark{background:var(--brand-blue);color:#fff;border-radius:11px}
+.btn{border-radius:10px;min-height:36px}
+.kpi .v{letter-spacing:-.04em}
+.navitem{border-radius:10px;padding-block:9px}
+.navsec h5{font-size:10px;letter-spacing:.12em}
+.logo b{text-transform:lowercase;letter-spacing:-.03em;font-size:19px}
+.logo small{text-transform:none;letter-spacing:0;line-height:1.5;font-size:11px}
+.brand span{text-transform:none;letter-spacing:0}
+.hero .ring .rv{stroke:var(--brand-teal)}
+.hero{border:1px solid var(--hero-track);padding:25px}
+.hero::after{border-color:var(--hero-track);opacity:.55}
+.progress i{background:var(--good)}
+.banner.demo{border:1px solid color-mix(in srgb,var(--accent) 16%,var(--surface));border-radius:12px}
+@media (max-width:640px){.hero{padding:18px}.banner.demo{align-items:flex-start;gap:10px;flex-direction:column}.banner.demo a{white-space:normal}.brand b{font-size:18px}}
+@media (prefers-reduced-motion:no-preference){.btn,.navitem{transition:background .15s ease,color .15s ease}.panel,.kpis{animation:panel-in .25s ease both}@keyframes panel-in{from{opacity:.7;transform:translateY(4px)}to{opacity:1;transform:none}}}

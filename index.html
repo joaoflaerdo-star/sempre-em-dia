@@ -3,151 +3,94 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>Sempre em Dia · Finanças, saúde e rotina da família</title>
-<meta name="description" content="Organize as finanças da família, a saúde e a rotina num só painel, no computador e no celular. Teste grátis por 7 dias.">
-<meta name="theme-color" content="#0b4f41">
+<title>Sempre em Dia · Sua vida organizada. Sua mente tranquila.</title>
+<meta name="description" content="Sua vida inteira organizada em um só lugar. Controle contas, medicamentos, hábitos e compromissos. Experimente 7 dias grátis, sem cartão.">
+<meta name="theme-color" content="#101C32">
 <meta property="og:type" content="website">
+<meta property="og:title" content="Sempre em Dia · Sua vida organizada. Sua mente tranquila.">
+<meta property="og:description" content="Finanças, saúde e rotina em um só lugar. Comece com 7 dias grátis, sem cartão.">
 <meta property="og:image" content="./assets/tela-computador.png">
 <link rel="icon" href="./icon.svg" type="image/svg+xml">
 <link rel="manifest" href="./manifest.webmanifest">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=IBM+Plex+Mono:wght@500&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700&family=IBM+Plex+Mono:wght@500&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap">
 <link rel="stylesheet" href="./assets/site.css">
 </head>
-<body>
-<header class="wrap nav">
-  <a class="logo" href="./"><span class="mark" data-brand-ini></span><b data-brand></b></a>
-  <a class="link hide-m" href="#recursos">Recursos</a>
-  <a class="link hide-m" href="#preco">Preço</a>
-  <a class="link" href="./entrar">Entrar</a>
+<body class="marketing">
+<a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+<svg class="svg-defs" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><defs>
+<symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+<symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></symbol>
+<symbol id="i-finance" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="15" rx="3"/><path d="M3 10h18M7 15h4"/></symbol>
+<symbol id="i-health" viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8L12 21l8.8-8.6a5.5 5.5 0 0 0 0-7.8Z"/><path d="M5 12h4l2-4 2 8 2-4h4"/></symbol>
+<symbol id="i-routine" viewBox="0 0 24 24"><path d="m3 6 2 2 3-3M11 7h10M3 13l2 2 3-3M11 14h10M11 21h10"/></symbol>
+<symbol id="i-play" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="m10 8 6 4-6 4Z"/></symbol>
+<symbol id="i-shield" viewBox="0 0 24 24"><path d="m12 3 8 3v6c0 5-8 9-8 9S4 17 4 12V6Z"/><path d="m8 12 3 3 5-6"/></symbol>
+<symbol id="i-phone" viewBox="0 0 24 24"><rect x="6" y="2" width="12" height="20" rx="3"/><path d="M10 18h4"/></symbol>
+</defs></svg>
+
+<header class="site-header">
+  <nav class="wrap nav" aria-label="Navegação principal">
+    <a class="logo" href="./" aria-label="Sempre em Dia, início"><span class="mark" data-brand-ini aria-hidden="true"></span><b data-brand>sempre em dia</b></a>
+    <div class="nav-links"><a href="#recursos">O que você organiza</a><a href="#demonstracao">Por dentro do app</a><a href="#preco">Plano e preço</a></div>
+    <a class="nav-login" href="./entrar.html">Entrar</a>
+    <a class="btn primary nav-cta" href="./entrar.html#criar">Começar grátis <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+  </nav>
 </header>
 
-<main>
-  <div class="wrap" id="excluida" hidden><p class="msg ok" style="padding:12px 14px;border-radius:10px;background:var(--accent-soft);color:var(--accent)">Sua conta e todos os seus dados foram excluídos.</p></div>
-
-  <section class="wrap hero">
-    <div>
-      <span class="eyebrow">Gestão pessoal e familiar</span>
-      <h1>Contas, saúde e rotina da família <em>sempre em dia</em>.</h1>
-      <p class="lead">Organize despesas, cartões e financiamentos, lembre dos remédios e treinos e acompanhe as pendências do dia, no computador e no celular.</p>
-      <div class="cta">
-        <a class="btn primary big" href="./entrar#criar">Começar <span data-dias></span> dias grátis</a>
-        <a class="btn big" href="./app?demo=1">Ver demonstração</a>
-        <small>Sem cartão para testar. Cancele quando quiser.</small>
-      </div>
+<main id="conteudo">
+  <div class="wrap" id="excluida" hidden><p class="msg ok" role="status">Sua conta e todos os seus dados foram excluídos.</p></div>
+  <section class="wrap landing-hero" aria-labelledby="hero-title">
+    <div class="hero-copy">
+      <p class="eyebrow"><span class="status-dot"></span> PARA A VIDA ACONTECER MAIS LEVE</p>
+      <h1 id="hero-title">Sua vida inteira organizada <span>em um só lugar.</span></h1>
+      <p class="hero-tagline">Sua vida organizada. Sua mente tranquila.</p>
+      <p class="lead">As contas da casa, os cuidados com a saúde e os planos de cada dia. Tudo junto, simples de acompanhar e feito para a sua vida real.</p>
+      <div class="hero-actions"><a class="btn primary big" href="./entrar.html#criar">Começar <span data-dias>7</span> dias grátis <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a><a class="demo-link" href="#demonstracao"><svg class="icon" aria-hidden="true"><use href="#i-play"/></svg> Explorar demonstração</a></div>
+      <p class="cta-note"><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg> Sem cartão. Sem compromisso. No seu ritmo.</p>
+      <div class="hero-categories" aria-label="Áreas disponíveis"><span><svg class="icon" aria-hidden="true"><use href="#i-finance"/></svg> Finanças</span><span><svg class="icon" aria-hidden="true"><use href="#i-health"/></svg> Saúde</span><span><svg class="icon" aria-hidden="true"><use href="#i-routine"/></svg> Rotina</span></div>
     </div>
-    <div class="shot">
-      <img class="desk" src="./assets/tela-computador.png" alt="Painel no computador: saldo previsto do mês, contas pedindo atenção e indicadores" width="1280" height="860">
-      <img class="phone" src="./assets/tela-celular.png" alt="Painel no celular com a linha de cuidados do dia" width="390" height="844">
-    </div>
+    <figure class="hero-product">
+      <div class="product-label"><span class="live-dot"></span> UM OLHAR PARA O SEU MÊS <span class="label-right">Visão geral</span></div>
+      <div class="screenshot-frame"><img class="desktop-shot" src="./assets/tela-computador.png" alt="Captura real da visão geral do Sempre em Dia, com saldo previsto, contas do mês e gráficos. Os valores são exemplos da demonstração." width="1280" height="860" fetchpriority="high"></div>
+      <div class="phone-frame"><img src="./assets/tela-celular.png" alt="Tela real de saúde no celular com cuidados do dia, usando dados fictícios." width="390" height="844"></div>
+      <figcaption><svg class="icon" aria-hidden="true"><use href="#i-shield"/></svg> Telas reais do sistema. Dados de demonstração.</figcaption>
+    </figure>
   </section>
 
-  <section class="band alt" id="recursos">
+  <div class="reassurance"><div class="wrap reassurance-inner"><p>Menos coisas na cabeça.<br><strong>Mais clareza no seu dia.</strong></p><span><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg> Tudo em um painel</span><span><svg class="icon" aria-hidden="true"><use href="#i-phone"/></svg> No celular e no computador</span><span><svg class="icon" aria-hidden="true"><use href="#i-shield"/></svg> Uma conta só sua</span></div></div>
+
+  <section class="wrap section benefits" id="recursos" aria-labelledby="benefits-title">
+    <div class="section-heading"><div><p class="eyebrow">UM LUGAR PARA CADA PARTE DA VIDA</p><h2 id="benefits-title">Organizar o dia.<br><span>Desocupar a mente.</span></h2></div><p>Você não precisa lembrar de tudo.<br>Precisa saber onde encontrar.</p></div>
+    <div class="benefit-grid">
+      <article class="benefit-card finance"><div class="feature-top"><span class="feature-icon"><svg class="icon" aria-hidden="true"><use href="#i-finance"/></svg></span><span class="feature-number">01 / FINANÇAS</span></div><h3>Seu dinheiro,<br>com mais direção.</h3><p>Contas, cartões, receitas e financiamentos organizados. Veja o saldo previsto e o que está perto de vencer.</p><div class="before-after"><div><span class="before-label">ANTES</span><p>“Será que essa conta já foi paga?”</p></div><div><span class="after-label">COM TUDO EM DIA</span><p>Pagamentos e vencimentos em um só painel.</p></div></div><a href="./app.html?demo=1#fin">Conhecer as finanças <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a></article>
+      <article class="benefit-card health"><div class="feature-top"><span class="feature-icon"><svg class="icon" aria-hidden="true"><use href="#i-health"/></svg></span><span class="feature-number">02 / SAÚDE</span></div><h3>Cuidar de você<br>também é prioridade.</h3><p>Remédios, refeições, treinos e água. Seus cuidados aparecem juntos, com os horários de cada dia.</p><div class="before-after"><div><span class="before-label">ANTES</span><p>“Qual era o horário do remédio?”</p></div><div><span class="after-label">COM TUDO EM DIA</span><p>Uma lista de cuidados para acompanhar e marcar.</p></div></div><a href="./app.html?demo=1#saude">Conhecer os cuidados <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a></article>
+      <article class="benefit-card routine"><div class="feature-top"><span class="feature-icon"><svg class="icon" aria-hidden="true"><use href="#i-routine"/></svg></span><span class="feature-number">03 / ROTINA</span></div><h3>Planos que saem<br>da sua cabeça.</h3><p>Transforme pendências em tarefas com prazo e prioridade. Acompanhe seus hábitos e o que precisa de atenção.</p><div class="before-after"><div><span class="before-label">ANTES</span><p>“Eu tinha uma coisa para resolver…”</p></div><div><span class="after-label">COM TUDO EM DIA</span><p>As prioridades de hoje, na ordem certa.</p></div></div><a href="./app.html?demo=1#rotina">Conhecer a rotina <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a></article>
+    </div>
+    <p class="example-note">Situações ilustrativas do dia a dia, não depoimentos de clientes.</p>
+  </section>
+
+  <section class="demo-section section" id="demonstracao" aria-labelledby="demo-title">
     <div class="wrap">
-      <h2>Três áreas da vida, um painel só</h2>
-      <p class="intro">Tudo o que um pai ou uma mãe de família precisa acompanhar no mês, organizado do jeito que você pensa.</p>
-      <div class="mods">
-        <article class="mod">
-          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 13h4v7H4zM10 8h4v12h-4zM16 4h4v16h-4z"/></svg></div>
-          <h3>Finanças</h3>
-          <ul>
-            <li>Mais de 40 despesas de família já organizadas por categoria</li>
-            <li>Cartões com a fatura somada automaticamente</li>
-            <li>Financiamentos com parcelas pagas e saldo devedor</li>
-            <li>Investimentos, receitas e saldo previsto do mês</li>
-            <li>Alerta de contas atrasadas e a vencer</li>
-          </ul>
-        </article>
-        <article class="mod">
-          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="8"/><path d="M12 8v4l3 2"/></svg></div>
-          <h3>Saúde</h3>
-          <ul>
-            <li>Remédios e suplementos com os horários do dia</li>
-            <li>Plano de refeições como lembrete</li>
-            <li>Treinos da semana, dia a dia</li>
-            <li>Controle de copos de água</li>
-            <li>Aviso do que ficou para trás</li>
-          </ul>
-        </article>
-        <article class="mod">
-          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6l2 2 3-3M11 7h9M4 13l2 2 3-3M11 14h9M11 20h9"/></svg></div>
-          <h3>Rotina</h3>
-          <ul>
-            <li>Pendências com prazo, área e prioridade</li>
-            <li>Anotação rápida: escreva e tecle Enter</li>
-            <li>Atrasadas e “para hoje” sempre no topo</li>
-            <li>Rotina diária com os dias da semana</li>
-          </ul>
-        </article>
-      </div>
+      <div class="section-heading"><div><p class="eyebrow">EXPERIMENTE ANTES DE CRIAR SUA CONTA</p><h2 id="demo-title">Não precisa imaginar.<br><span>Pode experimentar.</span></h2></div><p>Abra o painel, marque uma conta e explore a sua rotina. Aqui, os dados são fictícios e as mudanças ficam só no navegador.</p></div>
+      <div class="demo-toolbar"><div class="demo-tabs" role="group" aria-label="Área da demonstração"><button type="button" class="is-active" data-demo="fin" aria-pressed="true"><svg class="icon" aria-hidden="true"><use href="#i-finance"/></svg> Finanças</button><button type="button" data-demo="saude" aria-pressed="false"><svg class="icon" aria-hidden="true"><use href="#i-health"/></svg> Saúde</button><button type="button" data-demo="rotina" aria-pressed="false"><svg class="icon" aria-hidden="true"><use href="#i-routine"/></svg> Rotina</button></div><a class="text-link" href="./app.html?demo=1#fin" id="demoFull" target="_blank" rel="noopener">Abrir em tela cheia ↗</a></div>
+      <div class="demo-window"><div class="window-top"><span class="window-dots" aria-hidden="true"><i></i><i></i><i></i></span><span><span class="live-dot"></span> Seu espaço de demonstração</span><span class="window-badge">DADOS FICTÍCIOS</span></div><iframe id="liveDemo" title="Demonstração interativa real do Sempre em Dia com dados fictícios" src="./app.html?demo=1#fin" loading="lazy" referrerpolicy="same-origin"></iframe></div>
+      <div class="demo-bottom"><p><strong>Gostou de ver tudo organizado?</strong> Crie sua conta para montar e salvar o seu próprio planejamento.</p><a class="btn primary" href="./entrar.html#criar">Criar minha conta <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a></div>
     </div>
   </section>
 
-  <section class="band">
-    <div class="wrap split">
-      <img class="phone2" src="./assets/tela-celular-financas.png" alt="Resumo financeiro do mês no celular" width="390" height="844" loading="lazy">
-      <div>
-        <h2>Feito para usar no celular</h2>
-        <p class="intro">Abra no navegador e adicione à tela inicial: ele vira um aplicativo, com ícone próprio.</p>
-        <ul class="checks">
-          <li><div><b>Sincroniza em todos os aparelhos</b><span>O que você marca no celular aparece no computador na hora.</span></div></li>
-          <li><div><b>Um toque para marcar como pago</b><span>Contas, remédios e tarefas se resolvem com um toque.</span></div></li>
-          <li><div><b>Seus dados são só seus</b><span>Cada conta é isolada no banco de dados e a conexão é criptografada.</span></div></li>
-          <li><div><b>Sem instalação nem atualização</b><span>Funciona em Android, iPhone e computador.</span></div></li>
-        </ul>
-      </div>
-    </div>
-  </section>
+  <section class="wrap section mobile-section" aria-labelledby="mobile-title"><div class="mobile-showcase"><img src="./assets/tela-celular-financas.png" alt="Captura real do painel financeiro do Sempre em Dia no celular, com informações fictícias." width="390" height="844" loading="lazy"><span class="mobile-caption">NA PALMA DA MÃO</span></div><div class="mobile-copy"><p class="eyebrow">SEU DIA NÃO ACONTECE SÓ NA MESA</p><h2 id="mobile-title">A vida se movimenta.<br><span>Seu planejamento vai junto.</span></h2><p class="section-lead">Confira uma conta na fila do mercado. Marque o cuidado do dia. Anote aquela tarefa antes de esquecer.</p><ul class="feature-list"><li><span class="feature-icon"><svg class="icon" aria-hidden="true"><use href="#i-phone"/></svg></span><div><h3>Seu app, sem complicação</h3><p>Abra no Android, iPhone ou computador. Você pode adicionar o atalho à tela inicial.</p></div></li><li><span class="feature-icon"><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg></span><div><h3>Seu planejamento acompanha você</h3><p>Na sua conta, as alterações são sincronizadas entre os aparelhos.</p></div></li><li><span class="feature-icon"><svg class="icon" aria-hidden="true"><use href="#i-shield"/></svg></span><div><h3>Um espaço para as suas informações</h3><p>Acesso individual, conexão criptografada e opção de excluir seus dados pela conta.</p></div></li></ul></div></section>
 
-  <section class="band alt" id="preco">
-    <div class="wrap">
-      <h2>Um plano, tudo incluído</h2>
-      <p class="intro">Experimente sem compromisso. Se gostar, assine pelo Mercado Pago.</p>
-      <div class="price">
-        <div>
-          <h3>Plano completo</h3>
-          <p>Finanças, saúde e rotina, em todos os seus aparelhos.</p>
-          <ul>
-            <li><span data-dias></span> dias grátis, sem cartão</li>
-            <li>Cobrança mensal automática no cartão</li>
-            <li>Cancele quando quiser, direto no app</li>
-          </ul>
-        </div>
-        <div class="side">
-          <div class="val"><span data-preco></span><small> /mês</small></div>
-          <a class="btn primary big" href="./entrar#criar">Criar conta grátis</a>
-        </div>
-      </div>
-    </div>
-  </section>
+  <section class="pricing-section section" id="preco" aria-labelledby="price-title"><div class="wrap pricing-layout"><div class="pricing-copy"><p class="eyebrow">SIMPLES TAMBÉM NA HORA DE ASSINAR</p><h2 id="price-title">Um plano.<br>Toda a sua vida<br><span>mais organizada.</span></h2><p>Comece com <span data-dias>7</span> dias grátis e conheça tudo com calma. Depois, você decide se quer continuar.</p><a href="#perguntas" class="text-link">Ainda tem alguma dúvida? ↓</a></div><div class="plan-card"><div class="plan-top"><span class="plan-icon"><span class="mark" data-brand-ini aria-hidden="true"></span></span><span class="plan-tag">TUDO INCLUÍDO</span></div><h3>Seu dia completo</h3><p>Finanças, saúde e rotina no mesmo lugar.</p><div class="plan-value"><strong data-preco>R$ 19,90</strong><span>/ mês</span></div><p class="plan-trial">Comece com <strong><span data-dias>7</span> dias grátis</strong></p><ul class="plan-features"><li>Todos os módulos e recursos</li><li>Celular e computador, sincronizados</li><li>Demonstração disponível antes do cadastro</li><li>Assinatura mensal pelo Mercado Pago</li><li>Cancelamento direto na sua conta</li></ul><a class="btn primary big" href="./entrar.html#criar">Começar meus <span data-dias>7</span> dias grátis <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a><small>Sem cartão para testar. A assinatura é opcional.</small></div></div></section>
 
-  <section class="band">
-    <div class="wrap">
-      <h2>Perguntas frequentes</h2>
-      <div class="faq">
-        <details><summary>Preciso cadastrar cartão para testar?</summary><p>Não. Você cria a conta com e-mail e senha e usa tudo por <span data-dias></span> dias. O cartão só é pedido se você decidir assinar.</p></details>
-        <details><summary>Como funciona o pagamento?</summary><p>A assinatura é feita pelo Mercado Pago, com cobrança mensal automática no cartão. Se você assinar durante o teste, a primeira cobrança acontece só quando o teste acabar.</p></details>
-        <details><summary>Posso cancelar quando quiser?</summary><p>Sim, na área Minha conta, com um toque. Você continua usando até o fim do período já pago e não há multa.</p></details>
-        <details><summary>O que acontece se eu não assinar depois do teste?</summary><p>Seus dados ficam guardados e você continua vendo tudo, mas não consegue editar. Assinando, volta a usar normalmente.</p></details>
-        <details><summary>Meus dados estão seguros?</summary><p>Cada cliente só acessa os próprios dados, por regra do banco de dados. A conexão é criptografada e você pode excluir sua conta e todos os dados quando quiser.</p></details>
-        <details><summary>Funciona no iPhone e no Android?</summary><p>Sim. Abra o site no navegador do celular e use “Adicionar à tela inicial” para ter o ícone como um aplicativo.</p></details>
-      </div>
-    </div>
-  </section>
+  <section class="wrap section faq-section" id="perguntas" aria-labelledby="faq-title"><div><p class="eyebrow">PARA COMEÇAR COM TRANQUILIDADE</p><h2 id="faq-title">Uma dúvida a menos.</h2><p>O que você precisa saber antes de organizar o primeiro dia.</p></div><div class="faq"><details><summary>Preciso cadastrar cartão para testar?</summary><p>Não. Crie sua conta com e-mail e senha e use o sistema por <span data-dias>7</span> dias. O cartão só será solicitado se você decidir contratar a assinatura.</p></details><details><summary>A demonstração usa meus dados?</summary><p>Não. Ela abre com dados fictícios. As alterações da demonstração ficam no seu navegador e não são gravadas na sua conta. Ao se cadastrar, você monta seu próprio planejamento.</p></details><details><summary>Como funciona a assinatura?</summary><p>Você contrata pelo Mercado Pago e paga mensalmente no cartão. Se contratar durante o teste, a primeira cobrança é agendada para depois do fim do teste.</p></details><details><summary>Posso cancelar quando quiser?</summary><p>Sim. Acesse Minha conta no aplicativo e solicite o cancelamento. Você mantém o acesso pelo período já pago ou pelo teste ainda válido, sem multa de cancelamento.</p></details><details><summary>E se eu não assinar depois do teste?</summary><p>Seus dados ficam guardados para consulta, mas a edição é suspensa. Ao assinar, você volta a editar o planejamento.</p></details><details><summary>Funciona no celular e no computador?</summary><p>Sim. Use pelo navegador no Android, iPhone ou computador. Na sua conta, os dados são sincronizados entre os aparelhos.</p></details></div></section>
+
+  <section class="wrap final-invitation"><span class="mark" data-brand-ini aria-hidden="true"></span><h2>Seu próximo dia<br>pode ser mais tranquilo.</h2><p>Comece organizando uma coisa. O resto encontra seu lugar.</p><a class="btn primary big" href="./entrar.html#criar">Começar <span data-dias>7</span> dias grátis <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a><small>Sem cartão. No celular ou no computador.</small></section>
 </main>
 
-<footer>
-  <div class="wrap">
-    <span>© <span id="ano"></span> <span data-brand></span> · <span data-empresa></span></span>
-    <span><a href="./termos">Termos de uso</a> · <a href="./privacidade">Privacidade</a> · <span data-suporte></span></span>
-  </div>
-</footer>
-
-<script src="./config.js"></script>
-<script src="./assets/marca.js"></script>
-<script>
-  if (new URLSearchParams(location.search).get('conta') === 'excluida') document.getElementById('excluida').hidden = false;
-</script>
+<footer class="site-footer"><div class="wrap footer-main"><div><a class="logo" href="./"><span class="mark" data-brand-ini aria-hidden="true"></span><b data-brand>sempre em dia</b></a><p>Sua vida organizada. Sua mente tranquila.</p></div><nav aria-label="Informações legais"><a href="./termos.html">Termos de uso</a><a href="./privacidade.html">Privacidade</a><a href="mailto:suporte@sempreemdia.com.br" data-support-link>Fale com a gente</a></nav></div><div class="wrap footer-bottom"><span>© <span id="ano"></span> <span data-brand>sempre em dia</span></span><span>Feito para a vida real.</span></div></footer>
+<div class="mobile-cta"><div><strong>Uma rotina mais leve.</strong><span><span data-dias>7</span> dias grátis · sem cartão</span></div><a class="btn primary" href="./entrar.html#criar">Começar grátis <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a></div>
+<script src="./config.js"></script><script src="./assets/marca.js"></script><script src="./assets/site.js" defer></script>
 </body>
 </html>

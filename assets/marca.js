@@ -13,5 +13,5 @@
   set('[data-empresa]', [emp.razaoSocial, emp.cnpj ? 'CNPJ ' + emp.cnpj : ''].filter(Boolean).join(' · '));
   set('[data-suporte]', c.emailSuporte || '');
   set('#ano', String(new Date().getFullYear()));
-  if (document.title && document.title.indexOf(nome) < 0) document.title = nome + ' · ' + document.title;
+  if (document.title && document.title.toLocaleLowerCase().indexOf(nome.toLocaleLowerCase()) < 0) document.title = nome + ' · ' + document.title;
 })();
