@@ -7,6 +7,10 @@
 <meta name="description" content="Organize as finanças da família, a saúde e a rotina num só painel, no computador e no celular. Teste grátis por 7 dias.">
 <meta name="theme-color" content="#0b4f41">
 <meta property="og:type" content="website">
+<meta property="og:title" content="Sempre em Dia — Organize finanças, saúde e rotina">
+<meta property="og:description" content="Um só painel para suas contas, cuidados e compromissos. Experimente 7 dias sem cartão.">
+<meta property="og:url" content="https://joaoflaerdo-star.github.io/sempre-em-dia/">
+<link rel="canonical" href="https://joaoflaerdo-star.github.io/sempre-em-dia/">
 <meta property="og:image" content="./assets/tela-computador.png">
 <link rel="icon" href="./icon.svg" type="image/svg+xml">
 <link rel="manifest" href="./manifest.webmanifest">
@@ -14,6 +18,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=IBM+Plex+Mono:wght@500&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
 <link rel="stylesheet" href="./assets/site.css">
+<link rel="stylesheet" href="./assets/comercial-v1.css">
 </head>
 <body>
 <header class="wrap nav">
@@ -35,6 +40,7 @@
         <a class="btn primary big" href="./entrar#criar">Começar <span data-dias></span> dias grátis</a>
         <a class="btn big" href="./app?demo=1">Ver demonstração</a>
         <small>Sem cartão para testar. Cancele quando quiser.</small>
+        <div class="sed-trust" aria-label="Benefícios do teste"><span>7 dias para experimentar</span><span>Sem cartão no cadastro</span><span>Funciona no celular e computador</span></div>
       </div>
     </div>
     <div class="shot">
@@ -43,6 +49,8 @@
     </div>
   </section>
 
+
+  <section class="band" id="como-funciona"><div class="wrap"><h2>Comece a se organizar em três passos</h2><p class="intro">Você não precisa aprender um sistema complicado para colocar a rotina em ordem.</p><div class="sed-steps"><article class="sed-step"><strong>1</strong><h3>Crie sua conta</h3><p>Comece o teste grátis, sem informar cartão.</p></article><article class="sed-step"><strong>2</strong><h3>Organize o essencial</h3><p>Registre suas contas, compromissos e cuidados do dia.</p></article><article class="sed-step"><strong>3</strong><h3>Acompanhe tudo</h3><p>Consulte suas prioridades e o que precisa de atenção em um só painel.</p></article></div></div></section>
   <section class="band alt" id="recursos">
     <div class="wrap">
       <h2>Três áreas da vida, um painel só</h2>
@@ -135,7 +143,9 @@
       </div>
     </div>
   </section>
+  <div class="wrap"><section class="sed-final"><h2>Comece hoje a colocar tudo em dia</h2><p>Experimente todas as áreas do Sempre em Dia por <span data-dias>7</span> dias. Sem cartão no cadastro.</p><a class="btn big" href="./entrar#criar">Criar minha conta grátis</a></section></div>
 </main>
+<div class="sed-mobile-cta"><a href="./entrar#criar">Começar teste grátis</a></div>
 
 <footer>
   <div class="wrap">
@@ -146,6 +156,7 @@
 
 <script src="./config.js"></script>
 <script src="./assets/marca.js"></script>
+<script defer src="./assets/comercial-v1.js"></script>
 <script>
   if (new URLSearchParams(location.search).get('conta') === 'excluida') document.getElementById('excluida').hidden = false;
 </script>
